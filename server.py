@@ -42,7 +42,7 @@ class Handler(BaseHTTPRequestHandler):
 # Main entry point — starts the HTTP server
 def main():
     # Read PORT from environment variable, default to 8000 if not set
-    port = int(os.environ.get('PORT', '8000'))
+    port = int(os.environ.get('PORT', '8080'))
     # Create and bind the HTTP server to 0.0.0.0 (listen on all interfaces)
     server = HTTPServer(('0.0.0.0', port), Handler)
     # Print the listening address and port
