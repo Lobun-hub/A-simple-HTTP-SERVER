@@ -17,7 +17,7 @@ PAGE = """\
     <title>Hello</title>
 </head>
 <body>
-    <h1>Welcome to our HTTP Server</h1>
+    <h1>Welcome to HTTP SERVER</h1>
     <p>Server started at {timestamp}</p>
 </body>
 </html>
@@ -42,13 +42,15 @@ class Handler(BaseHTTPRequestHandler):
 # Main entry point — starts the HTTP server
 def main():
     # Read PORT from environment variable, default to 8000 if not set
-    port = int(os.environ.get('PORT', '8080'))
+    port = int(os.environ.get('PORT', '8000'))
     # Create and bind the HTTP server to 0.0.0.0 (listen on all interfaces)
     server = HTTPServer(('0.0.0.0', port), Handler)
     # Print the listening address and port
     print(f"Listening on 0.0.0.0:{port}")
     # Start the server and listen for requests indefinitely
     server.serve_forever()
+
+# Run the main function if this script is executed directly
 
 
 if __name__ == '__main__':
